@@ -11,14 +11,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class TicketController {
 
 
-
     @Autowired
     private EventAppService eventAppService;
 
 
-
     @GetMapping
     public String getTickets() {
-        return "Ticket System API is running";
+        return eventAppService.sayHi();
     }
 }
