@@ -14,32 +14,37 @@ server:
       max: 10
 
 resilience4j:
-  circuitbreaker:
-    instances:
-      ticketService:
-        registerHealthIndicator: true
-        slidingWindowSize: 10
-        permittedNumberOfCallsInHalfOpenState: 3
-        slidingWindowType: COUNT_BASED
-        minimumNumberOfCalls: 5
-        waitDurationInOpenState: 5s
-        failureRateThreshold: 50
-        eventConsumerBufferSize: 10
-  retry:
-    instances:
-      ticketService:
-        maxAttempts: 3
-        waitDuration: 2s
-        enableExponentialBackoff: true
-        exponentialBackoffMultiplier: 2
+
+
   ratelimiter:
     instances:
       ticketService:
         limitForPeriod: 10
         limitRefreshPeriod: 1s
         timeoutDuration: 0
-  bulkhead:
-    instances:
-      ticketService:
-        maxConcurrentCalls: 5
-        maxWaitDuration: 0
+  circuitbreaker:
+    configs:
+      default:
+        registerHealthIndicator: true       # (1) Đăng ký trạng thái vào Actuator health endpoint
+        eventConsumerBufferSize: 100        # (2) Kích thước bộ đệm lưu trữ các sự kiện của CB
+        slidingWindowSize: 20               # (3) Số lượng cuộc gọi được ghi lại để tính toán tỉ lệ lỗi
+        minimumNumberOfCalls: 10            # (4) Số lần gọi tối thiểu trước khi CB bắt đầu tính toán tỉ lệ lỗi
+        permittedNumberOfCallsInHalfOpenState: 5 # (5) Số lần gọi được phép khi CB ở trạng thái HALF_OPEN
+        waitDurationInOpenState: 10s        # (6) Thời gian CB ở trạng thái OPEN trước khi chuyển sang HALF_OPEN
+        failureRateThreshold: 50            # (7) Ngưỡng tỉ lệ lỗi (%) để CB chuyển sang trạng thái OPEN
+        slowCallRateThreshold: 50           # (8) Ngưỡng tỉ lệ cuộc gọi chậm (%) để CB chuyển sang trạng thái OPEN
+        slowCallDurationThreshold: 2s       # (9) Thời gian định nghĩa một cuộc gọi là "chậm"
+
+  # retry:
+  #   instances:
+  #     ticketService:
+  #       maxAttempts: 3
+  #       waitDuration: 2s
+  #       enableExponentialBackoff: true
+  #       exponentialBackoffMultiplier: 2
+
+  # bulkhead:
+  #   instances:
+  #     ticketService:
+  #       maxConcurrentCalls: 5
+  #       maxWaitDuration: 0
