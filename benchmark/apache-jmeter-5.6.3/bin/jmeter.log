@@ -1,0 +1,29 @@
+2026-01-15 01:08:46,783 INFO o.a.j.u.JMeterUtils: Setting Locale to vi_VN
+2026-01-15 01:08:46,805 ERROR o.a.j.u.JMeterUtils: Could not find resources for 'vi_VN'
+2026-01-15 01:08:46,805 INFO o.a.j.JMeter: Loading user properties from: user.properties
+2026-01-15 01:08:46,805 INFO o.a.j.JMeter: Loading system properties from: system.properties
+2026-01-15 01:08:46,808 INFO o.a.j.JMeter: Copyright (c) 1998-2024 The Apache Software Foundation
+2026-01-15 01:08:46,809 INFO o.a.j.JMeter: Version 5.6.3
+2026-01-15 01:08:46,809 INFO o.a.j.JMeter: java.version=17.0.15
+2026-01-15 01:08:46,809 INFO o.a.j.JMeter: java.vm.name=OpenJDK 64-Bit Server VM
+2026-01-15 01:08:46,809 INFO o.a.j.JMeter: os.name=Mac OS X
+2026-01-15 01:08:46,809 INFO o.a.j.JMeter: os.arch=aarch64
+2026-01-15 01:08:46,809 INFO o.a.j.JMeter: os.version=26.2
+2026-01-15 01:08:46,809 INFO o.a.j.JMeter: file.encoding=UTF-8
+2026-01-15 01:08:46,809 INFO o.a.j.JMeter: java.awt.headless=null
+2026-01-15 01:08:46,809 INFO o.a.j.JMeter: Max memory     =4294967296
+2026-01-15 01:08:46,809 INFO o.a.j.JMeter: Available Processors =10
+2026-01-15 01:08:46,813 INFO o.a.j.JMeter: Default Locale=Tiếng Việt (Việt Nam)
+2026-01-15 01:08:46,813 INFO o.a.j.JMeter: JMeter  Locale=Tiếng Việt (Việt Nam)
+2026-01-15 01:08:46,813 INFO o.a.j.JMeter: JMeterHome=/Users/anhhtjse/Projects/TicketSystem/benchmark/apache-jmeter-5.6.3
+2026-01-15 01:08:46,813 INFO o.a.j.JMeter: user.dir  =/Users/anhhtjse/Projects/TicketSystem/benchmark/apache-jmeter-5.6.3/bin
+2026-01-15 01:08:46,813 INFO o.a.j.JMeter: PWD       =/Users/anhhtjse/Projects/TicketSystem/benchmark/apache-jmeter-5.6.3/bin
+2026-01-15 01:08:46,816 INFO o.a.j.JMeter: IP: 127.0.0.1 Name: MacBook-Pro-M2.local FullName: localhost
+2026-01-15 01:08:46,822 INFO o.a.j.JMeter: Loaded icon properties from org/apache/jmeter/images/icon.properties
+2026-01-15 01:08:47,188 INFO o.a.j.JMeterGuiLauncher: Setting LAF to: com.github.weisj.darklaf.DarkLaf:com.github.weisj.darklaf.theme.DarculaTheme
+2026-01-15 01:13:26,551 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2026-01-15 01:13:26,552 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2026-01-15 01:13:26,552 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2026-01-15 01:13:26,552 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2026-01-15 01:13:26,552 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser
+2026-01-15 01:13:26,552 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/css is org.apache.jmeter.protocol.http.parser.CssParser
