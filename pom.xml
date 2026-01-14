@@ -18,6 +18,7 @@
     <modules>
         <module>ticket-system-domain</module>
         <module>ticket-system-application</module>
+        <module>ticket-system-controller</module>
         <module>ticket-system-infrastructure</module>
         <module>ticket-system-start</module>
     </modules>
