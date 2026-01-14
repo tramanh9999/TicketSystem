@@ -35,16 +35,15 @@ resilience4j:
         slowCallRateThreshold: 50           # (8) Ngưỡng tỉ lệ cuộc gọi chậm (%) để CB chuyển sang trạng thái OPEN
         slowCallDurationThreshold: 2s       # (9) Thời gian định nghĩa một cuộc gọi là "chậm"
 
-  # retry:
-  #   instances:
-  #     ticketService:
-  #       maxAttempts: 3
-  #       waitDuration: 2s
-  #       enableExponentialBackoff: true
-  #       exponentialBackoffMultiplier: 2
-
-  # bulkhead:
-  #   instances:
-  #     ticketService:
-  #       maxConcurrentCalls: 5
-  #       maxWaitDuration: 0
+  retry:
+    instances:
+      ticketService:
+        maxAttempts: 3                     # (1) Số lần thử lại tối đa (bao gồm cả lần gọi đầu tiên)
+        waitDuration: 2s                   # (2) Thời gian chờ giữa các lần thử lại
+        enableExponentialBackoff: true     # (3) Bật cơ chế chờ đợi tăng dần theo lũy thừa
+        exponentialBackoffMultiplier: 2    # (4) Hệ số nhân cho cơ chế exponential backoff
+  bulkhead:
+    instances:
+      ticketService:
+        maxConcurrentCalls: 5              # (1) Số lượng cuộc gọi đồng thời tối đa được phép
+        maxWaitDuration: 0                 # (2) Thời gian tối đa một thread có thể đợi để vào bulkhead
