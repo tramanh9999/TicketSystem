@@ -59,3 +59,6 @@ Giới hạn số lượng luồng dữ liệu (threads) xử lý đồng thời
 | **RateLimiter** | `limitForPeriod` | Số lượt truy cập tối đa mỗi chu kỳ. |
 | **Retry** | `maxAttempts` | Số lần gọi lại tối đa nếu thất bại. |
 | **Bulkhead** | `maxConcurrentCalls` | Số luồng xử lý đồng thời tối đa. |
+
+
+![alt text](image.png)
