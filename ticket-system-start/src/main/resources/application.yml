@@ -8,14 +8,20 @@ spring:
     password:
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
 server:
   tomcat:
     threads:
       max: 10
 
 resilience4j:
-
-
   ratelimiter:
     instances:
       ticketService:
@@ -23,8 +29,8 @@ resilience4j:
         limitRefreshPeriod: 1s
         timeoutDuration: 0
   circuitbreaker:
-    configs:
-      default:
+    instances:
+      circuitBreakerService:
         registerHealthIndicator: true       # (1) Đăng ký trạng thái vào Actuator health endpoint
         eventConsumerBufferSize: 100        # (2) Kích thước bộ đệm lưu trữ các sự kiện của CB
         slidingWindowSize: 20               # (3) Số lượng cuộc gọi được ghi lại để tính toán tỉ lệ lỗi
@@ -47,3 +53,6 @@ resilience4j:
       ticketService:
         maxConcurrentCalls: 5              # (1) Số lượng cuộc gọi đồng thời tối đa được phép
         maxWaitDuration: 0                 # (2) Thời gian tối đa một thread có thể đợi để vào bulkhead
+
+
+
