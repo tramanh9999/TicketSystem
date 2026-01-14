@@ -50,6 +50,17 @@ Giới hạn số lượng luồng dữ liệu (threads) xử lý đồng thời
 
 ---
 
+## 5. Theo dõi qua Spring Boot Actuator
+
+Sau khi cấu hình `management.endpoints.web.exposure.include: "*"`, bạn có thể theo dõi trạng thái các cơ chế tại:
+
+- **Health Check**: `http://localhost:8080/actuator/health` (Xem trạng thái OPEN/CLOSED của CB).
+- **Danh sách CB**: `http://localhost:8080/actuator/circuitbreakers`
+- **Lịch sử sự kiện**: `http://localhost:8080/actuator/circuitbreakerevents`
+- **Danh sách Rate Limiters**: `http://localhost:8080/actuator/ratelimiters`
+
+---
+
 ## Tóm tắt các thông số trong `application.yml`
 
 | Cơ chế | Thuộc tính quan trọng | Ý nghĩa |
@@ -59,6 +70,5 @@ Giới hạn số lượng luồng dữ liệu (threads) xử lý đồng thời
 | **RateLimiter** | `limitForPeriod` | Số lượt truy cập tối đa mỗi chu kỳ. |
 | **Retry** | `maxAttempts` | Số lần gọi lại tối đa nếu thất bại. |
 | **Bulkhead** | `maxConcurrentCalls` | Số luồng xử lý đồng thời tối đa. |
-
 
 ![alt text](image.png)
